@@ -1,3 +1,23 @@
-<p>
-   Welcome to a convinient Git History UI
-</p>
+<div class="container mt-5 mb-5">
+   <div class="row">
+      <div class="form-group">
+         <label for="authToken">Enter your auth token</label>
+         <input type="email" class="form-control" id="authToken" aria-describedby="emailHelp">
+         <small id="emailHelp" class="form-text text-muted">You will find this auth token in your github account /settings/developer settings/personal access token.</small>
+         <button class="btn btn-primary">Show History</button>
+      </div>
+   </div>
+
+   <div class="row">
+      <div class="col-md-10">
+         <h4>Git History</h4>
+         <ul class="history-timeline">
+            <li>
+               <a target="_blank" href="https://www.totoprayogo.com/#">Commit hash</a>
+               <a href="#" class="float-right">Commit date</a>
+               <p>Commit message </p>
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>
