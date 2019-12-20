@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { HistoryComponent } from './history/history.component';
+import { AppComponent } from './components/app/app.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
