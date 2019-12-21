@@ -1,21 +1,33 @@
 <div class="container mt-5 mb-5">
    <div class="row">
+      <form>
+      <div class="form-group">
+         <label for="userName">Enter your username</label>
+         <input type="text" name="userName" class="form-control" [(ngModel)]="git.userName">
+      </div>
+      <div class="form-group">
+         <label for="repo">Enter your git repository</label>
+         <input type="text" name="repo" class="form-control" [(ngModel)]="git.repo">
+      </div>
       <div class="form-group">
          <label for="authToken">Enter your auth token</label>
-         <input type="email" class="form-control" id="authToken" aria-describedby="emailHelp">
-         <small id="emailHelp" class="form-text text-muted">You will find this auth token in your github account /settings/developer settings/personal access token.</small>
-         <button class="btn btn-primary">Show History</button>
+         <input type="text" name="authToken" class="form-control" [(ngModel)]="git.authToken" aria-describedby="authTokenHelp">
+         <small id="authTokenHelp" class="form-text text-muted">You will find this auth token in your github account /settings/developer settings/personal access token.</small>
       </div>
+      <button class="btn btn-primary" (click)="getHistory()" >Show History</button>
+      </form>
    </div>
 
    <div class="row">
       <div class="col-md-10">
          <h4>Git History</h4>
          <ul class="history-timeline">
-            <li>
-               <a target="_blank" href="https://www.totoprayogo.com/#">Commit hash</a>
-               <a href="#" class="float-right">Commit date</a>
-               <p>Commit message </p>
+            <li *ngFor="let c of commits">
+
+               <a target="_blank" href="{{c.link}}">{{c.hash}}</a>
+               <a target="_blank" href="{{c.link}}" class="float-right">{{c.date}}</a>
+               <p>{{c.message}}</p>
+               <div>Committed by: <span class="commit-author">{{c.committer}}</span></div>
             </li>
          </ul>
       </div>
